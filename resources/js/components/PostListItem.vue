@@ -5,7 +5,7 @@
         </router-link>
         <p class="text-gray-600 pb-3">{{ post.lead }}</p>
         <div class="text-small text-gray-600">
-            By Fakorede Abiola &nbsp; in Links &nbsp; 3 hours ago
+            By {{ post.author.name }} in <router-link :to="{ name: 'topic', params: {slug: post.topic.slug }}" class="underline hover:text-black">{{ post.topic.name }}</router-link> &bull; 3 hours ago
         </div>
     </div>
 </template>
