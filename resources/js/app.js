@@ -31,6 +31,7 @@ const routes = [
     { path: '/post/:id', name: 'post', component: Post},
     { path: '/topics/:slug', name: 'topic', component: TopicPostList},
     { path: '/authors/:id', name: 'author', component: AuthorPostList},
+    { path: '*', name: '404', component: {template: '<div>Not Found</div>'}},
 ]
 
 const router = new VueRouter({

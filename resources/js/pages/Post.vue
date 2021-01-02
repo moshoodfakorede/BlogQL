@@ -52,6 +52,9 @@ export default {
                 return {
                     id: this.$route.params.id
                 }
+            },
+            error() {
+                this.$router.push({ name: '404' });
             }
         }
     }

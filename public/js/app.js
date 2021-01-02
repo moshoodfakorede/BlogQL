@@ -5767,6 +5767,11 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
         return {
           id: this.$route.params.id
         };
+      },
+      error: function error() {
+        this.$router.push({
+          name: '404'
+        });
       }
     }
   }
@@ -52152,7 +52157,9 @@ var render = function() {
             },
             [_vm._v(_vm._s(_vm.post.topic.name))]
           ),
-          _vm._v(" • " + _vm._s(_vm.post.created_at || _vm.timeAgo) + "\n    ")
+          _vm._v(
+            " • " + _vm._s(_vm._f("timeAgo")(_vm.post.created_at)) + "\n    "
+          )
         ],
         1
       )
@@ -52287,7 +52294,7 @@ var render = function() {
                 ),
                 _vm._v(
                   " • " +
-                    _vm._s(_vm.post.created_at || _vm.timeAgo) +
+                    _vm._s(_vm._f("timeAgo")(_vm.post.created_at)) +
                     "\n        "
                 )
               ],
@@ -52360,7 +52367,9 @@ var render = function() {
                       },
                       [_vm._v(_vm._s(_vm.post.topic.name))]
                     ),
-                    _vm._v(" on " + _vm._s(_vm.post.created_at || _vm.longDate))
+                    _vm._v(
+                      " on " + _vm._s(_vm._f("longDate")(_vm.post.created_at))
+                    )
                   ],
                   1
                 )
@@ -68451,6 +68460,12 @@ var routes = [{
   path: '/authors/:id',
   name: 'author',
   component: _pages_AuthorPostList__WEBPACK_IMPORTED_MODULE_8__["default"]
+}, {
+  path: '*',
+  name: '404',
+  component: {
+    template: '<div>Not Found</div>'
+  }
 }];
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   mode: 'history',
