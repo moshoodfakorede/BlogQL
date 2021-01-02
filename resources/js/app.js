@@ -2,6 +2,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import VueApollo from 'vue-apollo';
 import ApolloClient from 'apollo-boost';
+import moment from 'moment';
 
 import './bootstrap';
 import Post from './pages/Post';
@@ -12,6 +13,9 @@ import TopicPostList from './pages/TopicPostList';
 window.Vue = Vue;
 Vue.use(VueRouter);
 Vue.use(VueApollo);
+
+Vue.filter("timeAgo", value => moment(value).fromNow());
+Vue.filter("longDate", value => moment(value).format('MMMM Do YYYY'));
 
 const apolloClient = new ApolloClient({
     // You should use an absolute URL here

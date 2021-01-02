@@ -5,7 +5,7 @@
         </router-link>
         <p class="text-gray-600 pb-3">{{ post.lead }}</p>
         <div class="text-small text-gray-600">
-            By <router-link :to="{ name: 'author', params: {id: post.author.id }}" class="underline hover:text-black">{{ post.author.name }}</router-link> in <router-link :to="{ name: 'topic', params: {slug: post.topic.slug }}" class="underline hover:text-black">{{ post.topic.name }}</router-link> &bull; 3 hours ago
+            By <router-link :to="{ name: 'author', params: {id: post.author.id }}" class="underline hover:text-black">{{ post.author.name }}</router-link> in <router-link :to="{ name: 'topic', params: {slug: post.topic.slug }}" class="underline hover:text-black">{{ post.topic.name }}</router-link> &bull; {{ post.created_at | timeAgo }}
         </div>
     </div>
 </template>
