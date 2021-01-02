@@ -4,9 +4,10 @@ import VueApollo from 'vue-apollo';
 import ApolloClient from 'apollo-boost';
 
 import './bootstrap';
-import Post from './Post';
-import PostList from './PostList';
-import TopicPostList from './components/TopicPostList';
+import Post from './pages/Post';
+import PostList from './pages/PostList';
+import AuthorPostList from './pages/AuthorPostList';
+import TopicPostList from './pages/TopicPostList';
 
 window.Vue = Vue;
 Vue.use(VueRouter);
@@ -25,6 +26,7 @@ const routes = [
     { path: '/', name: 'index', component: PostList},
     { path: '/post/:id', name: 'post', component: Post},
     { path: '/topics/:slug', name: 'topic', component: TopicPostList},
+    { path: '/authors/:id', name: 'author', component: AuthorPostList},
 ]
 
 const router = new VueRouter({
