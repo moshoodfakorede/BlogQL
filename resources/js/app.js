@@ -9,6 +9,7 @@ import Post from './pages/Post';
 import PostList from './pages/PostList';
 import AuthorPostList from './pages/AuthorPostList';
 import TopicPostList from './pages/TopicPostList';
+import NotFound from './pages/NotFound';
 
 window.Vue = Vue;
 Vue.use(VueRouter);
@@ -31,7 +32,7 @@ const routes = [
     { path: '/post/:id', name: 'post', component: Post},
     { path: '/topics/:slug', name: 'topic', component: TopicPostList},
     { path: '/authors/:id', name: 'author', component: AuthorPostList},
-    { path: '*', name: '404', component: {template: '<div>Not Found</div>'}},
+    { path: '*', name: '404', component: NotFound},
 ]
 
 const router = new VueRouter({
