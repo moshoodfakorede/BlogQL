@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import VueApollo from 'vue-apollo';
+import ApolloClient from 'apollo-boost';
 
 import './bootstrap';
 import PostList from './PostList';
